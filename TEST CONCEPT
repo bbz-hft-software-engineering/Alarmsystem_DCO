@@ -1,0 +1,84 @@
+## Test Concept: Security System Testing
+
+**1. Test Objective:**
+
+The objective of this testing is to verify the functionality and performance of the security system to ensure it meets the specified requirements.
+
+**2. Test Scope:**
+
+The testing will cover the following aspects of the security system:
+- Activation and deactivation of the system
+- Alarm triggering and response
+- Password input and verification
+- Sensor readings and detection
+- LED and sound indications
+- User interaction with buttons
+
+**3. Test Environment:**
+
+- Particle Photon Inventor's Kit Hardware
+- Emulated or physical environment simulating home security setup
+- Test environment should allow for the simulation of various scenarios, such as door opening, button presses, and sensor triggers.
+
+**4. Test Cases:**
+
+### Test Case 1: System Activation
+- Description: Verify that the system activates correctly when the activation button is pressed.
+- Precondition: The system is idle.
+- Steps:
+  1. Press the activation button.
+- Expected Result: The system enters the activated state, and a short tone is heard.
+
+### Test Case 2: Door Open Detection
+- Description: Verify that the system detects door opening and responds accordingly.
+- Precondition: The system is in the activated state.
+- Steps:
+  1. Simulate the door opening.
+- Expected Result:
+  - The yellow LED lights up.
+  - A tone is heard for 30 seconds.
+  - The system enters the password loop state.
+
+### Test Case 3: Password Input and Verification
+- Description: Verify that the system accepts the correct password input and responds accordingly.
+- Precondition: The system is in the password loop state.
+- Steps:
+  1. Enter the correct password by pressing the buttons as specified.
+- Expected Result:
+  - The yellow LED turns off.
+  - The green LED lights up.
+  - Two short tones are heard.
+  - The system returns to the idle state.
+
+### Test Case 4: Incorrect Password Input
+- Description: Verify that the system handles incorrect password input correctly.
+- Precondition: The system is in the password loop state.
+- Steps:
+  1. Enter an incorrect password by pressing the buttons in the wrong order or with wrong timing.
+- Expected Result:
+  - The yellow LED blinks briefly.
+  - The system continues to the alarm state.
+  - The red LED lights up.
+
+### Test Case 5: Alarm State Reset
+- Description: Verify that the system resets the alarm state when the correct buttons are pressed.
+- Precondition: The system is in the alarm state.
+- Steps:
+  1. Simulate pressing the correct buttons within the specified time frame.
+- Expected Result:
+  - The alarm state is reset.
+  - The system returns to the idle state.
+
+**5. Test Execution:**
+
+- Perform the test cases according to the defined steps and expected results.
+- Record the actual results and any deviations or issues encountered.
+- If automated testing is possible, use appropriate tools or scripts to execute the test cases.
+
+**6. Test Reporting:**
+
+- Document the test results, including any deviations or issues found during testing.
+- Provide a summary of the overall system performance and compliance with requirements.
+- Include recommendations for improvements or further testing, if applicable.
+
+Note: The test cases provided are just examples and should be tailored to the specific requirements and implementation of the security system being tested.
